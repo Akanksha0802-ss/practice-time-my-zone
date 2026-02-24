@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>this is heading 1</h1>
+    <h1>this is heading 2</h1>
+    <h2 id="byid">this is heading 3</h2>
+    <p class="byclass">this is paragraph</p>
+    <p class="byclass">this is paragraph</p>
+
+
+    <div class="container">
+        <p>this is para 1</p>
+        <p>this is para 2</p>
+    </div>
+
+    <script>
+        // let res = document.getElementsByTagName("h1");
+        // console.log(res);
+        
+        //-----------------
+        // let res = document.getElementById("byid");
+        // console.log(res);
+
+        //-----------------------
+        // let res = document.getElementsByClassName("byclass");
+        // console.log(res);
+
+        
+        //query selector
+        // let res = document.querySelector(".byclass");
+        // console.log(res);
+        
+        // let res = document.querySelectorAll(".byclass");
+        // console.log(res);
+
+        //-----------------
+        // const span = document.createElement("span");
+        // span.innerText = "this is span";
+        // span.classList.add('color');
+        // console.log(span);
+        // document.body.appendChild(span);
+
+        //--------------------
+        //I want to inject dynamic array
+        //we are injecting multimedia into body
+        // let img = document.createElement("img");
+        // img.setAttribute(
+        //   "src","https://images.pexels.com/photos/18232621/pexels-photo-1823262.jpeg");
+        // img.setAttribute("alt", "image");
+        // img.style.width = "400px";
+        // img.style.height = "400px";
+        
+
+        //How to find parent and childnode
+        // let container = document.querySelector(".container");
+        // console.log(container.children);
+
+        //what we learn
+        //dom hota kya h, superset of bom, aur uskoh access kitne tarikeh se krteh h 1. tageName, IdName, className, queryselector, querySelectorAll
+        //document.createElement
+        //property add krni ho , property means class, uskeh liye used hota classListObject - this give two property which is remove and add when u used like class.add and class.remove
+        //tag like image ,audio, vedio they do not content they have source , source means jb baat aati h attribute koh lgane ki ya htane that time we used setAttribute and removeAttribute
+        //for hierachy find parent and child aur childNode ya ParentNode
+    </script>
+</body>
+</html>
