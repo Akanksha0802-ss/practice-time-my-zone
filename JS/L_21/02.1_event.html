@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .grandparent {
+        width: 800px;
+        height: 600px;
+        background-color: beige;
+      }
+      .parent {
+        width: 600px;
+        height: 400px;
+        background-color: red;
+      }
+      .child {
+        width: 300px;
+        height: 300px;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grandparent">
+      grandparent
+      <div class="parent">
+        parent
+        <div class="child">child</div>
+      </div>
+    </div>
+    <!-- <p id="data"></p> -->
+
+    <script>
+      // --- JavaScript Event Concepts ---
+
+      let grandparent = document.querySelector(".grandparent");
+      let parent = document.querySelector(".parent");
+      let child = document.querySelector(".child");
+
+      //ye print kr raha tha bottom se top which is event capturing by default false
+      // grandparent.addEventListener("click", () => {
+      //   console.log("Grandparent was clicked");
+      // });
+      // parent.addEventListener("click", () => {
+      //   console.log("Parent was clicked");
+      // });
+      // child.addEventListener("click", () => {
+      //   console.log("Child was clicked");
+      // });
+
+      //--------------------------yhaa peh event capturing true h, ab ye jayega top to bottom, yhaa peh event has beec captured
+      // grandparent.addEventListener("click", () => {
+      //   console.log("Grandparent was clicked");
+      // }, true);
+      // parent.addEventListener("click", () => {
+      //   console.log("Parent was clicked");
+      // }, true);
+      // child.addEventListener("click", () => {
+      //   console.log("Child was clicked");
+      // }, true);
+
+      //event capturing-whenever event drop down comes at a top to bottom finding the element that is target that is called event capturing and event bublling - events happen and executes itself then tries to find away like a bubble is called event bubbling and event target (that is also called execution phase)
+
+      //yhaa peh grandparent pr event lga rahe h
+      // grandparent.addEventListener {
+      //   "click", (event) => {
+      //     console.log("grand parent was clicked");
+      //     console.log(event);  
+      //   }, true
+      // }
+
+      //yhaa peh child peh
+      //      child.addEventListener {
+      //   "click", (event) => {
+      //     console.log("grand parent was clicked");
+      //     console.log(event);  
+      //   }, true
+      // }
+
+      // ab yhaa peh capturing nhi hogi bubble krkeh upr jayega
+      // grandparent.addEventListener("click", () => {
+      // console.log("Grandparent was clicked");
+      // console.log(event);
+      // });
+
+      // parent.addEventListener("click", () => {
+      //   console.log("Parent was clicked");
+      // });
+
+      // child.addEventListener("click", () => {
+      //   console.log("Child was clicked");
+      // })
+
+      //ye apkeh syllabus ka part nhi h
+      // grandparent.addEventListener("click", (event) => {
+      // console.log("Grandparent was clicked");
+      // // let data = document.getElementById("data");
+      // // data.innerText = event.target;
+      // console.log(event.target);
+      // });
+
+      //ab ye run krkhe dekho
+      grandparent.addEventListener("click", (event) => {
+      console.log("Grandparent was clicked");
+      let data = document.getElementById("data");
+      data.innerText = event.target.className;
+      document.body.appendChild(data);
+      //console.log(event.target);
+      });
+        
+    </script>
+  </body>
+</html>
+
+//event dellegation is the extension of event bubbling
