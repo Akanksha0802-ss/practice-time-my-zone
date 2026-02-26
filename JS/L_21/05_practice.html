@@ -12,8 +12,8 @@
     <h2>I am fond of watching crickets and any sports</h2>
     <h2>I want to help people in my life, I dont know how, why, what </h2>
     <h2 id="idName">I want to be humble, kinder, helper, honest, hard working, girl many more!</h2>
-    <p>Hello, Akanksha are you happy?</p>
-    <p>I want to travel many temple in my Life!</p>
+    <p class="para">Hello, Akanksha are you happy?</p>
+    <p class="para">I want to travel many temple in my Life!</p>
 
     <div class="container">
         <p>Struggling to find a internship or job, but I am doing my hardwork but I dont know things are not going according to me!</p>
@@ -37,7 +37,7 @@
         //--------------------------------
         //getElementById()
         let getH2 = document.getElementById("idName");
-        console.log(getH2);
+        //console.log(getH2);
 
         //Manipulating the Element
         let headingTwo = document.getElementById("idName");
@@ -52,7 +52,18 @@
         document.body.appendChild(newHeading);
 
         document.getElementById("mainHeading").style.color = "blue";
+
+        //getElementsByClassName()
+        let getPara = document.getElementsByClassName("para");
+        console.log(getPara);
         
+        //newElement created
+        const newPara = document.createElement("p");
+        newPara.className = "para";
+        newPara.innerText = "When I feel Stressed I started to dance or listening music Ehsaas + Apne andaaz e karam + Jhol!"
+        newPara.style.backgroundColor = "yellow"
+        document.body.appendChild(newPara);
+        console.log(newPara);
     </script>
 </body>
 
