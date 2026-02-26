@@ -12,7 +12,7 @@
     <h2>I am fond of watching crickets and any sports</h2>
     <h2>I want to help people in my life, I dont know how, why, what </h2>
     <h2 id="idName">I want to be humble, kinder, helper, honest, hard working, girl many more!</h2>
-    <p id="idName">Hello, Akanksha are you happy?</p>
+    <p>Hello, Akanksha are you happy?</p>
     <p>I want to travel many temple in my Life!</p>
 
     <div class="container">
@@ -24,7 +24,7 @@
     <script>
         //getElementsByTagName()
         let allH1 = document.getElementsByTagName("h1");
-        console.log(allH1);
+        //console.log(allH1);
 
         //If I add a new h1 heading:
         const newH1 = document.createElement("h1");
@@ -33,6 +33,18 @@
 
         //console.log(newH1);
         //console.log(allH1.length); 4
+
+        //--------------------------------
+        //getElementById()
+        let getH2 = document.getElementById("idName");
+        console.log(getH2);
+
+        //Manipulating the Element
+        let headingTwo = document.getElementById("idName");
+
+        headingTwo.style.color = "yellow";
+        headingTwo.innerText = "Yellow is my favourite color";
+        
     </script>
 </body>
 
