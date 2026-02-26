@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning DOM with Practice</title>
+</head>
+<body>
+    <h1>26 Feb,2026</h1>
+    <h1>Hello, Akanksha</h1>
+    <h1>Hello, chotti my father call me like this always</h1>
+    <h2>I am fond of watching crickets and any sports</h2>
+    <h2>I want to help people in my life, I dont know how, why, what </h2>
+    <h2 id="idName">I want to be humble, kinder, helper, honest, hard working, girl many more!</h2>
+    <p id="idName">Hello, Akanksha are you happy?</p>
+    <p>I want to travel many temple in my Life!</p>
+
+    <div class="container">
+        <p>Struggling to find a internship or job, but I am doing my hardwork but I dont know things are not going according to me!</p>
+        <p>Loving myself, feel lonely</p>
+        <p>Adding random content for learning purposes, whatever come in my mind right now!</p>
+    </div>
+
+    <script>
+        //getElementsByTagName()
+        let allH1 = document.getElementsByTagName("h1");
+        console.log(allH1);
+
+        //If I add a new h1 heading:
+        const newH1 = document.createElement("h1");
+        newH1.innerText = "Hi buddy, I am from Varanasi";
+        document.body.appendChild(newH1);
+
+        //console.log(newH1);
+        //console.log(allH1.length); 4
+    </script>
+</body>
+
+</html>
