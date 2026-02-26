@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning DOM with Practice</title>
+    <style>
+        .color {
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
     <h1>26 Feb,2026</h1>
@@ -14,6 +19,8 @@
     <h2 id="idName">I want to be humble, kinder, helper, honest, hard working, girl many more!</h2>
     <p class="para">Hello, Akanksha are you happy?</p>
     <p class="para">I want to travel many temple in my Life!</p>
+    <p class="para1">Yellow color define warning in CSS and in realLife some cases</p>
+    <p class="para1">How to get a Job, How to find Job!</p>
 
     <div class="container">
         <p>Struggling to find a internship or job, but I am doing my hardwork but I dont know things are not going according to me!</p>
@@ -55,7 +62,7 @@
 
         //getElementsByClassName()
         let getPara = document.getElementsByClassName("para");
-        console.log(getPara);
+        //console.log(getPara);
         
         //newElement created
         const newPara = document.createElement("p");
@@ -64,7 +71,25 @@
         newPara.style.backgroundColor = "yellow"
         document.body.appendChild(newPara);
         console.log(newPara);
-    </script>
+
+         //query selector
+        //  let gettingPara = document.querySelector("para");
+        //  console.log(gettingPara); // -> it gives null, here yhaa null kyu aa raha h because meh dot se . access nhi kr rahi thi
+
+        //let gettingPara = document.querySelector(".para1");
+        //console.log(gettingPara); // -> it gives whole html element of paragraph ka first element jiska className .para1 h
+
+         //querySelectorAll() ->it return NodeList Colection
+         let gettingPara = document.querySelectorAll(".para1");
+         console.log(gettingPara); // -> it gives whole html element 
+
+         //Start to create New Element in document or web page
+         const span = document.createElement("span");
+         span.innerText = "My family is waiting for my Job, when I get It? and I am greatful what I have till now, some time I feel that ki unkeh pass ye h wo h , why are you comparing jitna h khush raho n, apne se poor logo koh dekho smjh aa jayega, jitna h uthne meh grateful raho";
+         span.classList.add('color');
+         console.log(span);
+         document.body.appendChild(span);
+ </script>
 </body>
 
 </html>
