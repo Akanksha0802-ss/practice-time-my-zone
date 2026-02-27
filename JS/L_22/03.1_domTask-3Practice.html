@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-3 GithubUserNameFinder</title>
+</head>
+<body>
+     <!-- hm baar baar browser pr nhi jaana chateh toh hm vs code meh postman exension hota uskoh intsall krna h , postmana ya thunderclient meh se koi bhi install kr loh koi bhi kr loh its your choice, but thunderclient thodi der baad paise maagne lgta h, but postman is good one, basically its a api development and testing platform, thunderclient ka ui jaada better h, kaafi interactive to used h, but ye reliable h -->
+
+    <!-- task -3 this is a github username finder -->
+
+    <!-- Gimini peh likho reimagine the github username finder with modern ui and dynamic user input, ye aacha yi bnaa kr deh dehga for domTask-3 -->
+    <input type="text" name="username" id="username" placeholder="enter user name">
+
+    <button id="find">Find</button>
+
+    <script>
+        const username =  document.querySelector("#username").value;
+        const find = document.querySelector("#find");
+
+        find.addEventListener("click", async () => {
+            try {
+
+                // const response = await fetch("https://api.github.com/users/vikasthakurr")
+                // const response = await fetch(`https://api.github.com/users/${username}`
+
+                // const response = await fetch(`https://api.github.com/users/vikasthakurr`
+                const response = await fetch(`https://api.github.com/users/Akanksha0802-ss`
+            );
+            if(!response.ok) {
+                return alert("something went wrong");
+            }
+            const data = await response.json();
+            console.log(data);
+
+            const img = document.createElement("img");
+            img.setAttribute ("src", data.avatar_url);document.body.appendChild(img);
+
+    
+            const bio = document.createElement("p");
+            bio.innerText = data.bio;
+            document.body.appendChild(bio);
+
+
+            } catch (err) {
+                console.log(err);
+            }
+
+    }); 
+       
+    </script>
+</body>
+</html>
