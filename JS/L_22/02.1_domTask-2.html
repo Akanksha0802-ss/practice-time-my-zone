@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 900px;
+            height: 700px;
+            background-color: bisque;
+            margin-top: 40px;
+        }
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 10px;
+            display: inline-block;
+        }
+        .square {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: inline-block;
+        }
+        .rectangle{
+            width: 150px;
+            height: 100px;
+            margin: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!-- task2 hm user se puchege koan sa shape chaiye jisme hm 3 options dehge user koh which circle, squrae, rectangle, uskeh baad how many shape you want, color bhi user he choose krega the, it will click it tb hm generate krege -->
+
+    <!-- aur tmhe triangle bhi bnana h, ki kaise , ushme offset cut bhi lgta h ki design kaise bnega, square bnaakr tmhe uskoh cut krna hoga -->
+
+    <!-- i want to keep same js code but changes in ui only -->
+    <input type="text" name="shapename" id="shapename" placeholder="which shape you want">
+    <input type="number" name="quantity" id="quantity" placeholder="how many">
+
+    <input type="color" name="shapecolor" id="shapecolor" placeholder="how many">
+
+    <button id="generate">Generate</button>
+
+    <div class="container"></div>
+
+    <script>
+        const generate = document.querySelector("#generate");
+        // generate.onClick = generate();
+        generate.addEventListener("click", () => {
+            const shapename = document.querySelector("#shapename").value;
+            const quantity = document.querySelector("#quantity").value;
+            const shapecolor = document.querySelector("#shapecolor").value;
+            const container = document.querySelector(".container");
+
+            for (let i = 0; i < quantity; i++) {
+                let shape = document.createElement("div");
+                shape.classList.add(shapename);
+                shape.style.backgroundColor = shapecolor;
+                container.appendChild(shape);
+            }
+        });
+    </script>
+</body>
+</html>
