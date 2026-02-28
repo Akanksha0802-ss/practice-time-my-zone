@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>promise</h1>
+
+    <script>
+        let response = fetch("https://dummyjson.com/products");
+        console.log(response);
+
+        // OUTPUT: Promise
+        // [[Prototype]]: Promise[[PromiseState]]: "fulfilled"[[PromiseResult]]: Response
+
+
+    //   let promise1 = new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //       reject("error");
+    //     }, 2000);
+    //   });
+    //   console.log(promise1);
+    </script>
+  </body>
+</html>
+
+<!-- notes: maine ek fetch call bheji h, fetch means asynchronous kaam , fetch ka kaam hota h third parties se mujhe data laa kr dehna aur eska dushra bhai bhi hota h jiska naam hota axios jiskoh hm backend meh used krteh h
+fetch hmlog client side peh used kr rahe hoteh h 
+Promise Object hmhe 3 chije return krta h 1. pehla uska prototype, 2nd uski current state, 3rd uska result(wo kya lehne gya tha kya laya).
+fetch naam ka function hmhe return krta h promise(promise reject bhi ho skta h, full fill bhi ho skta h)
+-->
