@@ -237,6 +237,81 @@
 //-----how u can change the request object, stackoverflow kro aur btao
 //abhi toh terminal meh -> like this server started at port 3000 aur undefined aa raha h
 
+// import express from "express";
+
+// const PORT = 3000;
+
+// const app = express();
+// app.use(express.json());
+
+// app.use((req, res, next) => {
+//   //console.log("middleware called");
+//   //below two line initally it is my database
+//   // let username ="vikas";
+//   // let password = "vikas123"
+//   if (req.body.username == "" || req.body.password == "") {
+//     console.log("middleware1 called");
+  
+//     res.status(401).send("its not allowed")
+//   } else {
+//     next(); 
+//   }
+// });
+
+// app.use((req, res, next) => {
+//   if (req.body.username != "vikas" || req.body.password != "vikas123") {
+//     console.log("middleware2 called");
+//     req.user = { name: "vikas", age:26 }
+//     res.status(401).send("its not authorized")
+//   } 
+//   next(); 
+// });
+
+// app.get("/", (req, res) => {
+//   res.send("welcome to home page");
+//   res.send(req.user);
+// });
+
+// app.post("/login", (req, res) => {
+//   const username = req.body.username;
+//   const password = req.body.password;
+//   // const age = req.body.age;
+//   // console.log(age);
+
+//   res.send(req.user);
+//   res.status(200).json({ username, password });
+// });
+// app.listen(PORT, () => {
+//     console.log(`server started at port ${PORT}`);
+// });
+
+//Today is HOLI 04/March/2026->not going home becoz I have no JOB and working on myself, missing my family, I am not deserving to go home and enjoy, some time I have SELFDOUBT on myself which I am doing its worth it or not,and also sometime I feel ab nhi ho payega - but I am doing doing..!->this is what I feel right now.
+
+//------------------------------
+// import express from "express";
+
+// const PORT = 3000;
+
+// const app = express();
+// app.use(express.json());
+
+//   //make changes to the request and the response objects.
+//   app.use((req, res, next) => {
+//     console.log("middleware called");
+//     req.user = { name: "vikas", age:"26" }
+//     next(); 
+//   });
+
+//   app.get("/", (req, res) => {
+//    res.send("welcome to home page");
+//    //res.send(req.user);
+//    console.log("req.user");
+// });
+// app.listen(PORT, () => {
+//     console.log(`server started at port ${PORT}`);
+// });
+
+//----------------------------
 import express from "express";
 
 const PORT = 3000;
@@ -244,41 +319,23 @@ const PORT = 3000;
 const app = express();
 app.use(express.json());
 
-app.use((req, res, next) => {
-  //console.log("middleware called");
-  //below two line initally it is my database
-  // let username ="vikas";
-  // let password = "vikas123"
-  if (req.body.username == "" || req.body.password == "") {
-    console.log("middleware1 called");
-    req.body.age = 26;
-    res.status(401).send("its not allowed")
-  } else {
+  //middleware
+  //make changes to the request and the response objects.
+  app.use((req, res, next) => {
+    console.log("middleware called");
+    // req.user = { name: "vikas", age:"26", role:"admin" }
+    req.user = { name: "vikas", age:"26", role:"Software Engineer" }
     next(); 
-  }
-});
 
-app.use((req, res, next) => {
-  if (req.body.username != "vikas" || req.body.password != "vikas123") {
-    console.log("middleware2 called");
-    req.body.age = 26;
-    res.status(401).send("its not authorized")
-  } else {
-    next(); 
-  }
-});
+  });
 
-app.get("/", (req, res) => {
-  res.send("welcome to home page");
-});
-
-app.post("/login", (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
-  res.status(200).json({ username, password });
+  app.get("/", (req, res) => {
+   res.send("welcome to home page");
+   //res.send(req.user);
+   console.log(
+    `welcome ${req.user.name} and your age is ${req.user.age} and you are ${req.user.role}`
+   );
 });
 app.listen(PORT, () => {
     console.log(`server started at port ${PORT}`);
 });
-
-//Today is HOLI 04/March/2026->not going home becoz I have no JOB and working on myself, missing my family, I am not deserving to go home and enjoy, some time I have SELFDOUBT on myself which I am doing its worth it or not,and also sometime I feel ab nhi ho payega - but I am doing doing..!->this is what I feel right now.
