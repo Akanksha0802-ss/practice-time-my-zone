@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      button {
+        padding: 15px 20px;
+        margin: 10px;
+      }
+    </style>
+</head>
+<body>
+    <h1>two button problem</h1>
+
+    <button id="red">red</button>
+    <button id="green">green</button>
+
+    <script>
+        //esh code koh dekho output meh kya hoga beena click kiye background ka color green ho jayega that is a two button problem, yhaa closure ka concept aa jata h
+        // document.getElementById("red").onclick = HandleClick("red");
+        // document.getElementById("green").onclick = HandleClick("green");
+
+        // function HandleClick(color) {
+        //     document.body.style.backgroundColor = color;
+        // }
+        //------------------------
+        document.getElementById("red").onclick = HandleClick("red");
+        document.getElementById("green").onclick = HandleClick("green");
+
+        function makeClickHandler(color) {
+        // This returned function is a closure. It "closes over" the `color` variable.
+        // It remembers the value of `color` that was passed to `makeClickHandler`.
+        return function () {
+          document.body.style.backgroundColor = color;
+        };
+      }
+    </script>
+</body>
+</html>

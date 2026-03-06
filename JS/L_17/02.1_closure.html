@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>closure</h1>
+
+    <script>
+        // function outer() {
+        //     let value = 10;
+        //     function inner() {
+        //         console.log(value);
+        //     }
+        //     inner();
+        // }
+        // outer();
+
+        //-------------------------
+        function outer() {
+            let value = 10;
+            function inner() {
+                console.log(value);
+            }
+            return inner();
+        }
+        let res = outer(); //hmhe lgta h res toh outer koh hold kr raha h, nhi res hold kr raha h outer keh return value koh, outer kya return kr raha h inner ,wo innere koh hold kr raha h jb bhi  hm res koh call krge that means hm  indirectly kiskoh call lga rahe h inner koh
+        res();
+
+        //two button problem ask in interview
+        //closure as a defination smjh aa gya, ab closure as a implementation smjhna h using two button problem
+
+
+    </script>
+</body>
+</html>
+
+// return and calling meh difference smjh aa gya h, call mtlb immediate invoke hoga, return mtlb future reference keh liye bacha kr rkh liya
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// what u think clousure is:- koi btayega sir ask?
+//simple defination is clousure is binding means baandhana, ye joh parent hota h wo child koh apne saath baadh kr rkhta h, aisa nhi ki wo ltkaakr ghumta h wo apne environment ka access deh kr rkhta h, ki meh rahu ya n rahu ek mere pass joh h tmhe saada available rahega meh terminate ho jau, memoory se gayab ho jau
+ya n rahu mere pass joh copy ya reference wo hmesha rahega chahe meh terminate ho jau rahu ya n rahu
+
+//two defination h closure ka 
+//pehla defination h which is internet defination
